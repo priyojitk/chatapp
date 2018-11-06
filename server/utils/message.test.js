@@ -17,3 +17,20 @@ describe('generateMessage', () => {
         });
     });
 });
+
+
+describe('generateLocationMessage', () => {
+    it('should generate correct location odject'), () => {
+        var from = 'Deb';
+        var latitude = 15;
+        var longitude = 19;
+        var url = 'https://www.google.com/map?q=15,19';
+        var message = generateLocationMessage(from, latitude, longitude);
+
+        expect(message.createdAt).toBe('number');
+        expect(message).toMatchobject({
+            from,
+            url
+        });
+    };
+});
